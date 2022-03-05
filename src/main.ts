@@ -2,6 +2,19 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
 
+import { reactive } from "vue";
+
+const state = reactive({
+    residentID:'SampleID',
+    residentFirst:'SampleFirst',
+    residentMiddle:'SampleMiddle',
+    residentLast:'SampleLast',
+    residentSuffix:'SampleSuffix',
+    residentPurok:'SamplePurok',
+    residentPhone:'SamplePhone',
+});
+export default{state}
+
 import { IonicVue } from '@ionic/vue';
 
 /* Core CSS required for Ionic components to work properly */
@@ -19,6 +32,7 @@ import '@ionic/vue/css/text-alignment.css';
 import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
+import '@/assets/css/tailwind.css';
 
 /* Theme variables */
 import './theme/variables.css';

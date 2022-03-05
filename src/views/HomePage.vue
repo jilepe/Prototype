@@ -16,6 +16,8 @@
       <div id="container">
         <strong>Ready to create an app?</strong>
         <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <ion-button @click="CheckGlobal" class="mt-4 rounded-md bg-orange-1 text-white" size="large">About</ion-button>
+        <ion-button @click="back" class="mt-4 rounded-md bg-orange-1 text-white" size="large">Back</ion-button>
       </div>
     </ion-content>
   </ion-page>
@@ -24,6 +26,7 @@
 <script lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 import { defineComponent } from 'vue';
+import global from '../main';
 
 export default defineComponent({
   name: 'HomePage',
@@ -33,7 +36,20 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar
-  }
+  }, setup(){   
+      const {state} = global;
+      return{
+          state,
+    }
+  },
+     methods:{
+        CheckGlobal(){
+          alert(this.state.residentID)
+      },
+        back(){
+          this.$router.push("/residentpage");
+      },
+  },
 });
 </script>
 
